@@ -713,14 +713,16 @@
         },
 
         menuSidebarMobileToggle: function() {
+            // 点击一级菜单项，显示子菜单，关闭其他菜单
             $body.on('click', '.site-nav-mobile .list-menu .menu_mobile_link', function (e) {
-                if(!e.currentTarget.classList.contains('list-menu__item--end')){
+                if (!e.currentTarget.classList.contains('list-menu__item--end')) {
                     e.preventDefault();
                     e.stopPropagation();
+                    
                     var $target = $(this);
                     var $parent = $target.parent();
-                    var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
-
+                    var $menuDislosure1 = $parent.find('ul.list-menu--disclosure-1');
+        
                     // 切换显示/隐藏子菜单
                     if ($menuDislosure1.is(':visible')) {
                         $menuDislosure1.slideUp(300); // 隐藏
@@ -732,20 +734,18 @@
                         // 隐藏其他菜单
                         $parent.siblings().removeClass('is-open').addClass('is-hidden').find('ul').slideUp(300);
                     }
-                    // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
-                    // $target.parent().removeClass('is-hidden').addClass('is-open');
                 }
             });
-
+        
+            // 点击二级菜单项，显示三级菜单，关闭其他菜单
             $body.on('click', '.site-nav-mobile .list-menu .menu_mobile_link_2', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
+                
                 var $target = $(this);
-                var $target = $(this);
-                var $parent = $target.parent().parent();
-                var $menuDislosure2 = $target.parent().find('ul.list-menu--disclosure-2');
-                var $parentToScroll = $target.parent().parent().parent().parent().parent().parent();
-
+                var $parent = $target.parent().parent(); // 获取二级菜单项
+                var $menuDislosure2 = $parent.find('ul.list-menu--disclosure-2');
+        
                 // 切换显示/隐藏子菜单
                 if ($menuDislosure2.is(':visible')) {
                     $menuDislosure2.slideUp(300); // 隐藏
@@ -757,64 +757,38 @@
                     // 隐藏其他菜单
                     $parent.siblings().removeClass('is-open').addClass('is-hidden').find('ul').slideUp(300);
                 }
-
-                // if($('.header').hasClass('header-04') || $('.header').hasClass('header-01') || $('.header').hasClass('header-02')){
-                    // $target.parent().parent().siblings().removeClass('is-open').addClass('is-hidden');
-                    // $target.parent().parent().removeClass('is-hidden').addClass('is-open');
-                    // $target.parent().parent().parent().parent().parent().parent().animate({
-                    //     scrollTop: 0
-                    // }, 0);
-                // } else{
-                //     $target.parents('.site-nav').siblings().removeClass('is-open').addClass('is-hidden');
-                //     $target.parents('.site-nav').removeClass('is-hidden').addClass('is-open');
-                //     $target.parents('.menu-dropdown__wrapper').animate({
-                //         scrollTop: 0
-                //     }, 0);
-                // }
-
-                if($('.menu-dropdown').hasClass('megamenu_style_5') || $('.menu-dropdown').hasClass('megamenu_style_4') || $('.menu-dropdown').hasClass('megamenu_style_3') || $('.menu-dropdown').hasClass('megamenu_style_2') || $('.menu-dropdown').hasClass('megamenu_style_1')){
-                    $target.parents('.menu-dropdown').animate({
-                        scrollTop: 0
-                    }, 0);
-                }
-
-                $target.parents('.menu-dropdown').addClass('is-overflow');
             });
-
+        
+            // 点击子菜单标题关闭当前菜单
             $body.on('click', '.nav-title-mobile', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                var $target = $(this),
-                    $parentLv1 = $target.parent().parent().parent().parent('.is-open'),
-                    $parentLv2 = $target.parent().parent().parent('.is-open'),
-                    $parentLv3 = $target.parent().parent('.is-open');
-
-                $parentLv1.siblings().removeClass('is-hidden');
-                $parentLv1.removeClass('is-open').removeClass('d-none');
-                $parentLv2.siblings().removeClass('is-hidden');
-                $parentLv2.removeClass('is-open').removeClass('d-none');
-                $parentLv3.siblings().removeClass('is-hidden');
-                $parentLv3.removeClass('is-open').removeClass('d-none');
-                $('.menu-dropdown').removeClass('is-overflow');
+                
+                var $target = $(this);
+                var $parent = $target.closest('li');
+        
+                // 关闭当前子菜单
+                $parent.removeClass('is-open').addClass('is-hidden').find('ul').slideUp(300);
             });
-
+        
+            // 其他的菜单切换逻辑...
             if(window.mobile_menu != 'default'){
                 $doc.on('click', '[data-mobile-menu-tab]', (event) => {
                     event.preventDefault();
                     event.stopPropagation();
-
+        
                     var tabItem = event.currentTarget.closest('li'),
                         tabTarget = event.currentTarget.dataset.target;
-
+        
                     if(!tabItem.classList.contains('is-active')){
-
-                        document.querySelector('[data-navigation-tab-mobile]').querySelectorAll('li').forEach((element) =>{
+        
+                        document.querySelector('[data-navigation-tab-mobile]').querySelectorAll('li').forEach((element) => {
                             if(element != tabItem){
                                 element.classList.remove('is-active');
                             } else {
                                 element.classList.add('is-active');
-
-                                document.querySelectorAll('[id^="MenuMobileListSection-"]').forEach((tab) =>{
+        
+                                document.querySelectorAll('[id^="MenuMobileListSection-"]').forEach((tab) => {
                                     if(tab.getAttribute('id') == tabTarget) {
                                         tab.classList.remove('is-hidden');
                                         tab.classList.add('is-visible');
@@ -828,19 +802,20 @@
                     }
                 });
             };
-
+        
+            // 处理滚动和页面定位
             $(document).on('click', '[data-navigation-mobile] .no-megamenu .menu-lv-1__action', (event) => {
                 const hash = $(event.currentTarget).attr('href').split('#')[1];
-
+        
                 if (hash != undefined && hash != '' && $(`#${hash}`).length) {
                     $('body').removeClass('menu_open');
                     $('html, body').animate({
                         scrollTop: $(`#${hash}`).offset().top
                     }, 700);
                 }
-            })
-        },
-
+            });
+        }
+        
         setCookie(cname, cvalue, exdays){
             const d = new Date();
             d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
