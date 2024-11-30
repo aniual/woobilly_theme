@@ -6538,12 +6538,13 @@ summary::-webkit-details-marker {
         }
 
         .menu-lv-item:hover > .header__submenu, .menu-lv-item.menu-lv-2.dropdown:hover .site-nav-list-dropdown > .header__submenu{
-            display: none; /* 默认隐藏子菜单 */
-            position: relative;
-            margin-top: 0; /* 使子菜单紧跟父菜单项 */
-            left: 0;
-            top: 100%; /* 子菜单显示在父菜单的下方 */
-            z-index: 10; /* 确保子菜单位于父菜单下方而不是其他元素上方 */
+            display: block;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+            animation: animateMenuOpen var(--duration-default) ease;
+            z-index: 1;
         }
 
         .menu-lv-item.menu-lv-1 .menu-lv-2__action .icon-dropdown {
