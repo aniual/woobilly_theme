@@ -191,7 +191,9 @@
                 if (window.innerWidth > 1024) {
                     document.body.classList.remove('menu_open')
                 } else if (checkMenuMobile) {
+                    console.log(checkMenuMobile);
                     checkMenuMobile = false;
+                    console.log(checkMenuMobile);
                     this.menuSidebarMobile()
                     this.menuSidebarMobileToggle()
                     this.initMultiTab()
