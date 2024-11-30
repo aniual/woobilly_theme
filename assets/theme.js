@@ -720,14 +720,19 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
+                    if ($menuDislosure1.style.display === 'block') {
+                        $menuDislosure1.style.display = 'none';
+                      } else {
+                        $menuDislosure1.style.display = 'block';
+                      }
                     console.log($menuDislosure1);
-                    $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                    $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
-                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                            // $parent.addClass('d-none')
-                            $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        }
-                    })
+                    // $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
+                    // $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
+                    //     if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
+                    //         // $parent.addClass('d-none')
+                    //         $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
+                    //     }
+                    // })
 
                     // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
                     // $target.parent().removeClass('is-hidden').addClass('is-open');
