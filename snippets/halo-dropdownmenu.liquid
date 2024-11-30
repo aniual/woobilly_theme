@@ -1,6 +1,5 @@
 <li class="menu-lv-item menu-lv-1 text-left no-megamenu{% if link.links != blank %} dropdown{% endif %}{% if sale_item_lv1 contains title %} menu-sale{% endif %}">
-{%- if link.links != blank -%}
-    <a class="menu-lv-1__action  header__menu-item list-menu__item link focus-inset menu_mobile_link link-effect"{% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="javascript:void(0);"{% endif %}><span class="text{%- if link.child_active %} header__active-menu-item{% endif %} p-relative">{{ link.title | escape }}</span>
+{%- if link.links != blank -%}<a class="menu-lv-1__action  header__menu-item list-menu__item link focus-inset menu_mobile_link link-effect"{% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="javascript:void(0);"{% endif %}><span class="text{%- if link.child_active %} header__active-menu-item{% endif %} p-relative">{{ link.title | escape }}</span>
         <span class="icon-dropdown" data-toggle-menu-mb="">{% render 'icon-caret-right' %}</span>
         {%- if new_label_1 contains title -%}
             <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
@@ -10,7 +9,7 @@
             <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
         {%- endif -%}
     </a>
-    <ul class="header__submenu list-menu list-menu--disclosure list-menu--disclosure-1 caption-large motion-reduce" style="display:none;" role="list" >
+    <ul class="header__submenu list-menu list-menu--disclosure list-menu--disclosure-1 caption-large motion-reduce" role="list" >
         <div class="nav-title-mobile text-center"><span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}</div>
         <li class="menu-lv-item menu-lv-2 text-left navigation_all_mobile d-none"><a {% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="{{ link.url }}"{% endif %} class="menu-lv-2__action header__menu-item list-menu__item link link--text focus-inset caption-large link-effect"{% if childlink.current %} aria-current="page"{% endif %}><span class="text{%- if link.child_active %} header__active-menu-item{% endif %} p-relative">{{ 'general.navigation.go_to' | t }} {{ link.title | escape }}</span></a></li>
         {%- for childlink in link.links -%}
