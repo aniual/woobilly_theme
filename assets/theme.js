@@ -720,6 +720,17 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $submenu = $target.parent().find('ul.list-menu--disclosure-mobile-1');
+
+                    $submenu.removeClass('list-menu--disclosure-1');
+                    $submenu.addClass('mobile-menu-class');
+                    // 控制显示或隐藏子菜单
+                    if ($submenu.is(':visible')) {
+                        $submenu.slideUp().removeClass('mobile-menu-class');  // 隐藏并移除类
+                    } else {
+                        $submenu.slideDown().addClass('mobile-menu-class');  // 展开并添加类
+                        $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('mobile-menu-class'); // 隐藏其他兄弟菜单的子菜单
+                    }
 
                     $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
                     $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
