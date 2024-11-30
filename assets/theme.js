@@ -720,7 +720,7 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
-                    var $submenu = $parent.find('ul.list-menu--disclosure-custom-1'); // 获取子菜单
+                    var $submenu = $parent.find('ul.list-menu--disclosure-mobile-1'); // 获取子菜单
         
                     // 动态添加一个新的 class
                     $submenu.addClass('custom-menu-class'); // 新增 class 名
@@ -730,7 +730,7 @@
                         $submenu.slideUp().removeClass('custom-menu-class');  // 隐藏并移除类
                     } else {
                         $submenu.slideDown().addClass('custom-menu-class');  // 展开并添加类
-                        $parent.siblings().find('ul.list-menu--disclosure-custom-1').slideUp().removeClass('custom-menu-class'); // 隐藏其他兄弟菜单的子菜单
+                        $parent.siblings().find('ul.list-menu--disclosure-mobile-1').slideUp().removeClass('custom-menu-class'); // 隐藏其他兄弟菜单的子菜单
                     }
                     $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
                     $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
