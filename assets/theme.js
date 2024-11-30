@@ -736,7 +736,7 @@
                             // 隐藏其他兄弟菜单的子菜单
                             $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('mobile-menu-class');
                         }
-                    }, 0); // 0 毫秒延迟，确保操作顺序
+                    }, 200); // 0 毫秒延迟，确保操作顺序
 
                     // $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
                     // $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
