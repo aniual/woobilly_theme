@@ -746,16 +746,17 @@
                 var $menuDislosure2 = $target.parent().find('ul.list-menu--disclosure-2');
                 var $parentToScroll = $target.parent().parent().parent().parent().parent().parent();
 
-                $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                $menuDislosure2.off('transitionend.toggleMenuLink2').on('transitionend.toggleMenuLink2', () => {
-                    if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                        $parent.addClass('d-none')
-                        $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        $parentToScroll.animate({
-                            scrollTop: 0
-                        }, 0);
-                    }
-                })
+                // 切换显示/隐藏子菜单
+                if ($menuDislosure2.is(':visible')) {
+                    $menuDislosure2.slideUp(300); // 隐藏
+                    $parent.removeClass('is-open').addClass('is-hidden');
+                } else {
+                    $menuDislosure2.slideDown(300); // 显示
+                    $parent.addClass('is-open').removeClass('is-hidden');
+                    
+                    // 隐藏其他菜单
+                    $parent.siblings().removeClass('is-open').addClass('is-hidden').find('ul').slideUp(300);
+                }
 
                 // if($('.header').hasClass('header-04') || $('.header').hasClass('header-01') || $('.header').hasClass('header-02')){
                     // $target.parent().parent().siblings().removeClass('is-open').addClass('is-hidden');
