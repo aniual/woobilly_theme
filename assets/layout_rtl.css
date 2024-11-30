@@ -2296,7 +2296,6 @@
 
 		body.layout_rtl .halo-sidebar_menu .menu-dropdown, 
 		body.layout_rtl .halo-sidebar_menu .site-nav-list .site-nav-sub, 
-		body.layout_rtl .halo-sidebar_menu .list-menu--disclosure-1, 
 		body.layout_rtl .halo-sidebar_menu .list-menu--disclosure-2 {
 			transform: translate3d(101%,0,0);
 		}
