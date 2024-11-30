@@ -721,21 +721,13 @@
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
 
-                    // 如果子菜单已经展开，点击父菜单时隐藏子菜单，否则展开
-        if ($submenu.is(':visible')) {
-            $submenu.slideUp();  // 隐藏子菜单
-        } else {
-            $submenu.slideDown();  // 展开子菜单
-            $parent.siblings().find('ul.list-menu--disclosure-1').slideUp(); // 隐藏其他兄弟菜单的子菜单
-        }
-
-                    // $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                    // $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
-                    //     if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                    //         // $parent.addClass('d-none')
-                    //         $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                    //     }
-                    // })
+                    $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
+                    $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
+                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
+                            // $parent.addClass('d-none')
+                            $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
+                        }
+                    })
 
                     // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
                     // $target.parent().removeClass('is-hidden').addClass('is-open');
