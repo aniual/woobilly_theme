@@ -188,15 +188,8 @@
                 this.specialBanner();
                 this.specialBannerSlider();
                 this.unsymmetricalSlider();
-                if (window.innerWidth > 1024) {
                     document.body.classList.remove('menu_open')
-                } else if (checkMenuMobile) {
-                    checkMenuMobile = false;
-                    this.menuSidebarMobile()
-                    this.menuSidebarMobileToggle()
-                    this.initMultiTab()
-                    this.initMultiTabMobile()
-                }
+              
             });
         },
         
