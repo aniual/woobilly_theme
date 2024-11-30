@@ -720,28 +720,24 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
-                    var $submenu = $parent.find('ul.list-menu--disclosure-1'); // 获取子菜单
-        
-        // 检查屏幕大小，只有在移动端时应用新的逻辑
-        if (window.innerWidth <= 768) {
-            if ($submenu.hasClass('is-visible')) {
-                // 隐藏子菜单并移除 is-visible 类
-                $submenu.removeClass('is-visible').slideUp();
-            } else {
-                // 显示子菜单并添加 is-visible 类
-                $submenu.addClass('is-visible').slideDown();
-                $parent.siblings().find('ul.list-menu--disclosure-1').removeClass('is-visible').slideUp();
-            }
-        } else {
-            // 处理桌面端逻辑（如果需要）
-            if ($submenu.is(':visible')) {
-                $submenu.slideUp();
-            } else {
-                $submenu.slideDown();
-            }
-        }
-                    // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
-                    // $target.parent().removeClass('is-hidden').addClass('is-open');
+
+                    if (window.innerWidth <= 768) {
+                        if ($menuDislosure1.hasClass('is-visible')) {
+                            // 隐藏子菜单并移除 is-visible 类
+                            $menuDislosure1.removeClass('is-visible').slideUp();
+                        } else {
+                            // 显示子菜单并添加 is-visible 类
+                            $menuDislosure1.addClass('is-visible').slideDown();
+                            $parent.siblings().find('ul.list-menu--disclosure-1').removeClass('is-visible').slideUp();
+                        }
+                    } else {
+                        // 处理桌面端逻辑（如果需要）
+                        if ($menuDislosure1.is(':visible')) {
+                            $menuDislosure1.slideUp();
+                        } else {
+                            $menuDislosure1.slideDown();
+                        }
+                    }
                 }
             });
 
