@@ -720,26 +720,26 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
-                    var $submenu = $parent.find('ul.list-menu--disclosure-mobile-1'); // 获取子菜单
+                    var $submenu = $parent.find('ul.list-menu--disclosure-1'); // 获取子菜单
         
-                    // 动态添加一个新的 class
-                    $submenu.addClass('custom-menu-class'); // 新增 class 名
-
-                    // 控制显示或隐藏子菜单
-                    if ($submenu.is(':visible')) {
-                        $submenu.slideUp().removeClass('custom-menu-class');  // 隐藏并移除类
-                    } else {
-                        $submenu.slideDown().addClass('custom-menu-class');  // 展开并添加类
-                        $parent.siblings().find('ul.list-menu--disclosure-mobile-1').slideUp().removeClass('custom-menu-class'); // 隐藏其他兄弟菜单的子菜单
-                    }
-                    $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                    $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
-                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                            // $parent.addClass('d-none')
-                            $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        }
-                    })
-
+        // 检查屏幕大小，只有在移动端时应用新的逻辑
+        if (window.innerWidth <= 768) {
+            if ($submenu.hasClass('is-visible')) {
+                // 隐藏子菜单并移除 is-visible 类
+                $submenu.removeClass('is-visible').slideUp();
+            } else {
+                // 显示子菜单并添加 is-visible 类
+                $submenu.addClass('is-visible').slideDown();
+                $parent.siblings().find('ul.list-menu--disclosure-1').removeClass('is-visible').slideUp();
+            }
+        } else {
+            // 处理桌面端逻辑（如果需要）
+            if ($submenu.is(':visible')) {
+                $submenu.slideUp();
+            } else {
+                $submenu.slideDown();
+            }
+        }
                     // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
                     // $target.parent().removeClass('is-hidden').addClass('is-open');
                 }
