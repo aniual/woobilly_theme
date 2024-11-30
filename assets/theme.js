@@ -104,7 +104,7 @@
             // Init Mobile Menu 
             if (window.innerWidth < 1025) {
                 this.menuSidebarMobile();
-                this.menuSidebarMobileToggle();
+                // this.menuSidebarMobileToggle();
             }
 
             // Check Lazyload Done
