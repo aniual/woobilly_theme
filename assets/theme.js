@@ -719,9 +719,10 @@
                     e.stopPropagation();
                     var $target = $(this);
                     var $parent = $target.parent();
-                    // var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
                     var $submenu = $target.parent().find('ul.list-menu--disclosure-mobile-1');
 
+                    $submenu.removeClass('list-menu--disclosure-1');
                     $submenu.addClass('mobile-menu-class');
                     // 控制显示或隐藏子菜单
                     if ($submenu.is(':visible')) {
