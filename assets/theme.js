@@ -723,7 +723,7 @@
 
                     $parent.addClass('is-open').removeClass('d-none');
                     $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
-                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
+                        if ($parent.hasClass('is-open') &&  !$parent.hasClass('d-none')) {
                             // $parent.addClass('d-none')
                             $parent.siblings().removeClass('is-open').removeClass('d-none');
                         }
