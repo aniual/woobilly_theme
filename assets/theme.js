@@ -721,23 +721,16 @@
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
 
-                    if (window.innerWidth <= 768) {
-                        if ($menuDislosure1.hasClass('is-visible')) {
-                            // 隐藏子菜单并移除 is-visible 类
-                            $menuDislosure1.removeClass('is-visible').slideUp();
-                        } else {
-                            // 显示子菜单并添加 is-visible 类
-                            $menuDislosure1.addClass('is-visible').slideDown();
-                            $parent.siblings().find('ul.list-menu--disclosure-1').removeClass('is-visible').slideUp();
+                    $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
+                    $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
+                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
+                            // $parent.addClass('d-none')
+                            $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
                         }
-                    } else {
-                        // 处理桌面端逻辑（如果需要）
-                        if ($menuDislosure1.is(':visible')) {
-                            $menuDislosure1.slideUp();
-                        } else {
-                            $menuDislosure1.slideDown();
-                        }
-                    }
+                    })
+
+                    // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
+                    // $target.parent().removeClass('is-hidden').addClass('is-open');
                 }
             });
 
