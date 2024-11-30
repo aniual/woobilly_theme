@@ -725,10 +725,10 @@
                     $submenu.addClass('mobile-menu-class');
                     // 控制显示或隐藏子菜单
                     if ($submenu.is(':visible')) {
-                        $submenu.slideUp().removeClass('custom-menu-class');  // 隐藏并移除类
+                        $submenu.slideUp().removeClass('mobile-menu-class');  // 隐藏并移除类
                     } else {
-                        $submenu.slideDown().addClass('custom-menu-class');  // 展开并添加类
-                        $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('custom-menu-class'); // 隐藏其他兄弟菜单的子菜单
+                        $submenu.slideDown().addClass('mobile-menu-class');  // 展开并添加类
+                        $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('mobile-menu-class'); // 隐藏其他兄弟菜单的子菜单
                     }
 
                     // $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
