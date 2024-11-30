@@ -720,6 +720,7 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-mobile-1');
 
                     $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
                     $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
