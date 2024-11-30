@@ -719,7 +719,8 @@
                     e.stopPropagation();
                     var $target = $(this);
                     var $parent = $target.parent();
-                    var $submenu = $target.parent().find('ul.list-menu--disclosure-1');
+                    // var $submenu = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $submenu = $target.parent().find('ul.list-menu--disclosure-mobile-1');
 
                     $submenu.removeClass('list-menu--disclosure');
                     $submenu.addClass('mobile-menu-class');
