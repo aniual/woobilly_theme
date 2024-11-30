@@ -52,27 +52,7 @@
 
 .halo-sidebar_menu .menu-dropdown,
 .halo-sidebar_menu .site-nav-list .site-nav-sub,
-.halo-sidebar_menu .list-menu--disclosure-1,
-.halo-sidebar_menu .list-menu--disclosure-2 {
-    display: block;
-    position: fixed;
-    top: 0;
-    /*left: -101%;*/
-    width: 100%;
-    opacity: 0;
-    z-index: 1;
-    visibility: hidden;
-    box-shadow: none;
-    transition: opacity var(--duration-default) ease, transform var(--duration-default) ease, visibility var(--duration-default) ease;
-    background: var(--bg-white);
-    height: 100vh;
-    max-height: 100vh;
-    overflow: auto;
-    padding-bottom: 100px;
-    -ms-transform: translate3d(-101%, 0, 0);
-    -webkit-transform: translate3d(-101%, 0, 0);
-    transform: translate3d(-101%, 0, 0);
-}
+
 
 .site-nav-mobile .navigation_all_mobile {
     display: block !important;
