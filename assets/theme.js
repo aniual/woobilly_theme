@@ -721,14 +721,17 @@
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
 
-                    $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                    $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
-                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                            // $parent.addClass('d-none')
-                            $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        }
-                    })
-
+                    // 切换显示/隐藏子菜单
+                    if ($menuDislosure1.is(':visible')) {
+                        $menuDislosure1.slideUp(300); // 隐藏
+                        $parent.removeClass('is-open').addClass('is-hidden');
+                    } else {
+                        $menuDislosure1.slideDown(300); // 显示
+                        $parent.addClass('is-open').removeClass('is-hidden');
+                        
+                        // 隐藏其他菜单
+                        $parent.siblings().removeClass('is-open').addClass('is-hidden').find('ul').slideUp(300);
+                    }
                     // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
                     // $target.parent().removeClass('is-hidden').addClass('is-open');
                 }
