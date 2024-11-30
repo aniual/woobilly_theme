@@ -49,7 +49,9 @@
     transform: none;
     pointer-events: none;
 }
+@media screen and (min-width: 750px){
 
+}
 .halo-sidebar_menu .menu-dropdown,
 .halo-sidebar_menu .site-nav-list .site-nav-sub,
 .halo-sidebar_menu .list-menu--disclosure-1,
