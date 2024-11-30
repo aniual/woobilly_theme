@@ -1,61 +1,52 @@
-<li class="menu-item level-1 text-left no-megamenu{% if link.links != blank %} dropdown{% endif %}{% if sale_item_lv1 contains title %} sale-item{% endif %}">
-  {%- if link.links != blank -%}
-    <a
-      class="menu-item-level-1 action menu-link{% if link.url == blank %} disabled-link{% else %} has-submenu{% endif %}"
-      href="javascript:void(0);"
-    >
-      <span class="menu-item-title{% if link.child_active %} active{% endif %}">{{ link.title | escape }}</span>
-      <span class="submenu-toggle-icon">{% render 'icon-caret-right' %}</span>
-      {%- if new_label_1 contains title -%}
-        <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
-      {%- elsif sale_label_1 contains title -%}
-        <span class="label sale-label">{{ 'general.navigation.sale_label' | t }}</span>
-      {%- elsif hot_label_1 contains title -%}
-        <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
-      {%- endif -%}
-    </a>
-    <ul class="submenu level-1-submenu">
-      <div class="submenu-header">
-        <span class="icon-arrow-nav">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}
-      </div>
-      <li class="menu-item level-2 text-left navigation_all_mobile hidden-item">
-        <a class="menu-link submenu-link level-2-link" href="{{ link.url }}">
-          {{- 'general.navigation.go_to' | t }}
-          {{ link.title | escape -}}
-        </a>
-      </li>
-      {%- for childlink in link.links -%}
-        <li class="menu-item level-2 text-left{% if childlink.links != blank %} dropdown{% endif %}">
-          <a
-            class="menu-link submenu-link level-2-link{% if childlink.current %} active{% endif %}"
-            href="{{ childlink.url }}"
-          >
-            <span class="menu-item-title">{{ childlink.title | escape }}</span>
-            {%- if new_label_2 contains childlink.title -%}
-              <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
-            {%- elsif sale_label_2 contains childlink.title -%}
-              <span class="label sale-label">{{ 'general.navigation.sale_label' | t }}</span>
-            {%- elsif hot_label_2 contains childlink.title -%}
-              <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
+<li class="menu-item level-1 text-left no-megamenu{% if link.links != blank and link.links.size > 0 %} dropdown{% endif %}{% if sale_item_lv1 contains title %} sale-item{% endif %}">
+    {%- if link.links != blank and link.links.size > 0 -%}
+        <a class="menu-item-level-1 action menu-link{% if link.url == blank or link.url == nil %} disabled-link{% else %} has-submenu{% endif %}" href="javascript:void(0);">
+            <span class="menu-item-title{% if link.child_active %} active{% endif %}">{{ link.title | escape }}</span>
+            <span class="submenu-toggle-icon">{% render 'icon-caret-right' %}</span>
+            {%- if new_label_1 contains title -%}
+                <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
+            {%- elsif sale_label_1 contains title -%}
+                <span class="label sale-label">{{ 'general.navigation.sale_label' | t }}</span>
+            {%- elsif hot_label_1 contains title -%}
+                <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
             {%- endif -%}
-          </a>
-          {%- if childlink.links != blank -%}
-            <ul class="submenu level-2-submenu">
-              {%- for grandchildlink in childlink.links -%}
-                <li class="menu-item level-3">
-                  <a class="menu-link submenu-link level-3-link" href="{{ grandchildlink.url }}">
-                    <span class="menu-item-title">{{ grandchildlink.title | escape }}</span>
-                  </a>
+        </a>
+        <ul class="submenu level-1-submenu">
+            <div class="submenu-header">
+                <span class="icon-arrow-nav">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}
+            </div>
+            <li class="menu-item level-2 text-left navigation_all_mobile hidden-item">
+                <a class="menu-link submenu-link level-2-link" href="{{ link.url }}">{{ 'general.navigation.go_to' | t }} {{ link.title | escape }}</a>
+            </li>
+            {%- for childlink in link.links -%}
+                <li class="menu-item level-2 text-left{% if childlink.links != blank and childlink.links.size > 0 %} dropdown{% endif %}">
+                    <a class="menu-link submenu-link level-2-link{% if childlink.current %} active{% endif %}" href="{{ childlink.url }}">
+                        <span class="menu-item-title">{{ childlink.title | escape }}</span>
+                        {%- if new_label_2 contains childlink.title -%}
+                            <span class="label new-label">{{ 'general.navigation.new_label' | t }}</span>
+                        {%- elsif sale_label_2 contains childlink.title -%}
+                            <span class="label sale-label">{{ 'general.navigation.sale_label' | t }}</span>
+                        {%- elsif hot_label_2 contains childlink.title -%}
+                            <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
+                        {%- endif -%}
+                    </a>
+                    {%- if childlink.links != blank and childlink.links.size > 0 -%}
+                        <ul class="submenu level-2-submenu">
+                            {%- for grandchildlink in childlink.links -%}
+                                <li class="menu-item level-3">
+                                    <a class="menu-link submenu-link level-3-link" href="{{ grandchildlink.url }}">
+                                        <span class="menu-item-title">{{ grandchildlink.title | escape }}</span>
+                                    </a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    {%- endif -%}
                 </li>
-              {%- endfor -%}
-            </ul>
-          {%- endif -%}
-        </li>
-      {%- endfor -%}
-    </ul>
-  {%- else -%}
-    <a class="menu-item-level-1 action menu-link{% if link.current %} active{% endif %}" href="{{ link.url }}">
-      <span class="menu-item-title">{{ link.title | escape }}</span>
-    </a>
-  {%- endif -%}
+            {%- endfor -%}
+        </ul>
+    {%- else -%}
+        <a class="menu-item-level-1 action menu-link{% if link.current %} active{% endif %}" href="{{ link.url }}">
+            <span class="menu-item-title">{{ link.title | escape }}</span>
+        </a>
+    {%- endif -%}
 </li>
