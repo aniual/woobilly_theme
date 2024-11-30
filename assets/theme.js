@@ -721,7 +721,7 @@
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
 
-                    $parent.addClass('is-open').removeClass('d-none');
+                    $parent.addClass('is-open')
                     $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
                         if ($parent.hasClass('is-open') &&  !$parent.hasClass('d-none')) {
                             // $parent.addClass('d-none')
