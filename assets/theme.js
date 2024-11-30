@@ -6833,4 +6833,28 @@
   
         }
     }
+    $(document).ready(function () {
+        // Toggle submenu for level 1 items
+        $('.menu-item.level-1 > .menu-item-level-1 > a').on('click', function (e) {
+          e.preventDefault();
+          var $parent = $(this).closest('.menu-item');
+          $parent.toggleClass('open');
+          $parent.siblings().removeClass('open');
+        });
+    
+        // Toggle submenu for level 2 items
+        $('.menu-item.level-2 > .submenu-link').on('click', function (e) {
+          e.preventDefault();
+          var $parent = $(this).closest('.menu-item');
+          $parent.toggleClass('open');
+          $parent.siblings().removeClass('open');
+        });
+    
+        // Click outside to close open submenus
+        $(document).on('click', function (e) {
+          if (!$(e.target).closest('.menu-item').length) {
+            $('.menu-item').removeClass('open');
+          }
+        });
+      });
 })(jQuery);
