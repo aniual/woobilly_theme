@@ -720,7 +720,7 @@
                     var $target = $(this);
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
-                    var $submenu = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $submenu = $target.parent().find('ul.list-menu--disclosure-mobile-1');
 
                     // 动态添加一个新的 class
                     $submenu.addClass('custom-menu-class'); // 新增 class 名
