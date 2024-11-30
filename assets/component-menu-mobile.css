@@ -52,6 +52,7 @@
 
 .halo-sidebar_menu .menu-dropdown,
 .halo-sidebar_menu .site-nav-list .site-nav-sub,
+.halo-sidebar_menu .list-menu--disclosure-1,
 .halo-sidebar_menu .list-menu--disclosure-2 {
     display: block;
     position: fixed;

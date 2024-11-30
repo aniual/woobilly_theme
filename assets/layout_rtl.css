@@ -2296,12 +2296,14 @@
 
 		body.layout_rtl .halo-sidebar_menu .menu-dropdown, 
 		body.layout_rtl .halo-sidebar_menu .site-nav-list .site-nav-sub, 
+		body.layout_rtl .halo-sidebar_menu .list-menu--disclosure-1, 
 		body.layout_rtl .halo-sidebar_menu .list-menu--disclosure-2 {
 			transform: translate3d(101%,0,0);
 		}
 
 		body.layout_rtl .site-nav-mobile .list-menu .menu-lv-item.is-open>.menu-dropdown, 
 		body.layout_rtl .site-nav-mobile .menu-dropdown__wrapper .site-nav.is-open .site-nav-sub, 
+		body.layout_rtl .site-nav-mobile .list-menu .menu-lv-1.is-open .list-menu--disclosure-1, 
 		body.layout_rtl .site-nav-mobile .list-menu .menu-lv-2.is-open .list-menu--disclosure-2 {
 			transform: translateZ(0);
 		}
