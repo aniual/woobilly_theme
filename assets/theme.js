@@ -745,13 +745,13 @@
 
                 $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
                 $menuDislosure2.off('transitionend.toggleMenuLink2').on('transitionend.toggleMenuLink2', () => {
-                    if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                        $parent.addClass('d-none')
-                        $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        $parentToScroll.animate({
-                            scrollTop: 0
-                        }, 0);
-                    }
+                    // if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
+                    //     $parent.addClass('d-none')
+                    //     $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
+                    //     $parentToScroll.animate({
+                    //         scrollTop: 0
+                    //     }, 0);
+                    // }
                 })
 
                 // if($('.header').hasClass('header-04') || $('.header').hasClass('header-01') || $('.header').hasClass('header-02')){
