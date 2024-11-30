@@ -719,17 +719,25 @@
                     e.stopPropagation();
                     var $target = $(this);
                     var $parent = $target.parent();
-                    var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $submenu = $target.parent().find('ul.list-menu--disclosure-1');
 
+                    $submenu.removeClass('list-menu--disclosure');
                     $submenu.addClass('mobile-menu-class');
+                    // 控制显示或隐藏子菜单
+                    if ($submenu.is(':visible')) {
+                        $submenu.slideUp().removeClass('custom-menu-class');  // 隐藏并移除类
+                    } else {
+                        $submenu.slideDown().addClass('custom-menu-class');  // 展开并添加类
+                        $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('custom-menu-class'); // 隐藏其他兄弟菜单的子菜单
+                    }
 
-                    $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                    $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
-                        if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                            // $parent.addClass('d-none')
-                            $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        }
-                    })
+                    // $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
+                    // $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
+                    //     if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
+                    //         // $parent.addClass('d-none')
+                    //         $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
+                    //     }
+                    // })
 
                     // $target.parent().siblings().removeClass('is-open').addClass('is-hidden');
                     // $target.parent().removeClass('is-hidden').addClass('is-open');
