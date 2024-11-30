@@ -9,7 +9,7 @@
             <span class="label hot-label">{{ 'general.navigation.hot_label' | t }}</span>
         {%- endif -%}
     </a>
-    <ul class="list-menu--disclosure-custom-1 caption-large motion-reduce" role="list" >
+    <ul class="list-menu--disclosure-custom-1 caption-large motion-reduce" style="display:none" role="list" >
         {% comment %} <div class="nav-title-mobile text-center"><span class="icon-dropdown">{% render 'icon-arrow-nav' %}</span>{{ link.title | escape }}</div> {% endcomment %}
         <li class="menu-lv-item menu-lv-2 text-left navigation_all_mobile d-none"><a {% if link.url == blank %} role="link" aria-disabled="true"{% else %} href="{{ link.url }}"{% endif %} class="menu-lv-2__action header__menu-item list-menu__item link link--text focus-inset caption-large link-effect"{% if childlink.current %} aria-current="page"{% endif %}><span class="text{%- if link.child_active %} header__active-menu-item{% endif %} p-relative">{{ 'general.navigation.go_to' | t }} {{ link.title | escape }}</span></a></li>
         {%- for childlink in link.links -%}
