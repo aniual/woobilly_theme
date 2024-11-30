@@ -724,19 +724,16 @@
 
                     $submenu.removeClass('list-menu--disclosure-1 header__submenu list-menu list-menu--disclosure').addClass('mobile-menu-class');
 
-                    // 延迟动画处理，确保 DOM 更新完毕
-                    setTimeout(function() {
-                        // 控制显示或隐藏子菜单
-                        if ($submenu.is(':visible')) {
-                            // 隐藏子菜单并移除类
-                            $submenu.slideUp().removeClass('mobile-menu-class');
-                        } else {
-                            // 展开子菜单并添加类
-                            $submenu.slideDown().addClass('mobile-menu-class');
-                            // 隐藏其他兄弟菜单的子菜单
-                            $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('mobile-menu-class');
-                        }
-                    }, 200); // 0 毫秒延迟，确保操作顺序
+                    // 控制显示或隐藏子菜单
+                    if ($submenu.is(':visible')) {
+                        // 隐藏子菜单并移除类
+                        $submenu.slideUp().removeClass('mobile-menu-class');
+                    } else {
+                        // 展开子菜单并添加类
+                        $submenu.slideDown().addClass('mobile-menu-class');
+                        // 隐藏其他兄弟菜单的子菜单
+                        $parent.siblings().find('ul.list-menu--disclosure-1').slideUp().removeClass('mobile-menu-class');
+                    }
 
                     // $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
                     // $menuDislosure1.off('transitionend.toggleMenuLink1').on('transitionend.toggleMenuLink1', () => {
