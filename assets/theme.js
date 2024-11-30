@@ -719,7 +719,7 @@
                     e.stopPropagation();
                     var $target = $(this);
                     var $parent = $target.parent();
-                    var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
+                    var $submenu = $target.parent().find('ul.list-menu--disclosure-1');
 
                     // 动态添加一个新的 class
                     $submenu.addClass('custom-menu-class'); // 新增 class 名
@@ -745,107 +745,7 @@
                 }
             });
 
-            $body.on('click', '.site-nav-mobile .list-menu .menu_mobile_link_2', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                var $target = $(this);
-                var $target = $(this);
-                var $parent = $target.parent().parent();
-                var $menuDislosure2 = $target.parent().find('ul.list-menu--disclosure-2');
-                var $parentToScroll = $target.parent().parent().parent().parent().parent().parent();
-
-                $parent.removeClass('is-hidden').addClass('is-open').removeClass('d-none');
-                $menuDislosure2.off('transitionend.toggleMenuLink2').on('transitionend.toggleMenuLink2', () => {
-                    if ($parent.hasClass('is-open') && !$parent.hasClass('is-hidden') && !$parent.hasClass('d-none')) {
-                        $parent.addClass('d-none')
-                        $parent.siblings().removeClass('is-open').addClass('is-hidden').removeClass('d-none');
-                        $parentToScroll.animate({
-                            scrollTop: 0
-                        }, 0);
-                    }
-                })
-
-                // if($('.header').hasClass('header-04') || $('.header').hasClass('header-01') || $('.header').hasClass('header-02')){
-                    // $target.parent().parent().siblings().removeClass('is-open').addClass('is-hidden');
-                    // $target.parent().parent().removeClass('is-hidden').addClass('is-open');
-                    // $target.parent().parent().parent().parent().parent().parent().animate({
-                    //     scrollTop: 0
-                    // }, 0);
-                // } else{
-                //     $target.parents('.site-nav').siblings().removeClass('is-open').addClass('is-hidden');
-                //     $target.parents('.site-nav').removeClass('is-hidden').addClass('is-open');
-                //     $target.parents('.menu-dropdown__wrapper').animate({
-                //         scrollTop: 0
-                //     }, 0);
-                // }
-
-                if($('.menu-dropdown').hasClass('megamenu_style_5') || $('.menu-dropdown').hasClass('megamenu_style_4') || $('.menu-dropdown').hasClass('megamenu_style_3') || $('.menu-dropdown').hasClass('megamenu_style_2') || $('.menu-dropdown').hasClass('megamenu_style_1')){
-                    $target.parents('.menu-dropdown').animate({
-                        scrollTop: 0
-                    }, 0);
-                }
-
-                $target.parents('.menu-dropdown').addClass('is-overflow');
-            });
-
-            $body.on('click', '.nav-title-mobile', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-                var $target = $(this),
-                    $parentLv1 = $target.parent().parent().parent().parent('.is-open'),
-                    $parentLv2 = $target.parent().parent().parent('.is-open'),
-                    $parentLv3 = $target.parent().parent('.is-open');
-
-                $parentLv1.siblings().removeClass('is-hidden');
-                $parentLv1.removeClass('is-open').removeClass('d-none');
-                $parentLv2.siblings().removeClass('is-hidden');
-                $parentLv2.removeClass('is-open').removeClass('d-none');
-                $parentLv3.siblings().removeClass('is-hidden');
-                $parentLv3.removeClass('is-open').removeClass('d-none');
-                $('.menu-dropdown').removeClass('is-overflow');
-            });
-
-            if(window.mobile_menu != 'default'){
-                $doc.on('click', '[data-mobile-menu-tab]', (event) => {
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    var tabItem = event.currentTarget.closest('li'),
-                        tabTarget = event.currentTarget.dataset.target;
-
-                    if(!tabItem.classList.contains('is-active')){
-
-                        document.querySelector('[data-navigation-tab-mobile]').querySelectorAll('li').forEach((element) =>{
-                            if(element != tabItem){
-                                element.classList.remove('is-active');
-                            } else {
-                                element.classList.add('is-active');
-
-                                document.querySelectorAll('[id^="MenuMobileListSection-"]').forEach((tab) =>{
-                                    if(tab.getAttribute('id') == tabTarget) {
-                                        tab.classList.remove('is-hidden');
-                                        tab.classList.add('is-visible');
-                                    } else {
-                                        tab.classList.remove('is-visible');
-                                        tab.classList.add('is-hidden');
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
-            };
-
-            $(document).on('click', '[data-navigation-mobile] .no-megamenu .menu-lv-1__action', (event) => {
-                const hash = $(event.currentTarget).attr('href').split('#')[1];
-
-                if (hash != undefined && hash != '' && $(`#${hash}`).length) {
-                    $('body').removeClass('menu_open');
-                    $('html, body').animate({
-                        scrollTop: $(`#${hash}`).offset().top
-                    }, 700);
-                }
-            })
+            
         },
 
         setCookie(cname, cvalue, exdays){
