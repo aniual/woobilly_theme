@@ -73,7 +73,6 @@
     transform: translate3d(-101%, 0, 0);
 }
 .header__menu-item.is-open .icon-dropdown>.icon-caret{
-    transform-origin: center;
     transform:rotate(90deg);
 }
 .site-nav-mobile .navigation_all_mobile {
