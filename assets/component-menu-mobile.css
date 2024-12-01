@@ -48,7 +48,6 @@
     position: absolute;
     transform: none;
     pointer-events: none;
-    transform-origin: center;
 }
 
 .halo-sidebar_menu .menu-dropdown,
