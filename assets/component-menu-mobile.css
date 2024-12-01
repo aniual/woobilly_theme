@@ -449,8 +449,10 @@
     top: 0;
     right: 0;
     width: 50px;
-    height: 100%;
-    text-align: center;
+    height: 50px; /* Define a fixed size for the icon container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     pointer-events: none;
 }
 
