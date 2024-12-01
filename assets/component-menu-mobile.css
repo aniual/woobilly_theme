@@ -73,7 +73,9 @@
     -webkit-transform: translate3d(-101%, 0, 0);
     transform: translate3d(-101%, 0, 0);
 }
-
+.header__menu-item.is-open .icon-dropdown>.icon-caret{
+    transform:rotate(180deg);
+}
 .site-nav-mobile .navigation_all_mobile {
     display: block !important;
 }
