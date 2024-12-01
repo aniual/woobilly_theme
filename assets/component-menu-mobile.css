@@ -74,6 +74,7 @@
 }
 .header__menu-item.is-open .icon-dropdown>.icon-caret{
     transform:rotate(90deg);
+    transform-origin: center;
 }
 .site-nav-mobile .navigation_all_mobile {
     display: block !important;
