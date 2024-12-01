@@ -50,8 +50,8 @@
     pointer-events: none;
 }
 
-.header__menu-item.is-open .icon-dropdown>.icon-caret{
-    transform:rotate(90deg);
+.header__menu-item.is-open .icon-dropdown .icon-caret{
+    transform:rotate(90deg);    
 }
 
 .halo-sidebar_menu .menu-dropdown,
