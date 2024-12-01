@@ -41,12 +41,11 @@
     top: 0;
     right: 0;
     width: 50px;
-    height: 100%;
-    line-height: 50px;
-    text-align: center;
-    display: inline-block;
+    height: 50px; /* Set a fixed height to avoid using 100% */
+    display: flex; /* Use flexbox to center the icon */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
     position: absolute;
-    transform: none;
     pointer-events: none;
 }
 
