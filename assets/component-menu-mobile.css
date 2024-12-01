@@ -74,7 +74,7 @@
     transform: translate3d(-101%, 0, 0);
 }
 .header__menu-item.is-open .icon-dropdown>.icon-caret{
-    transform:rotate(-90deg);
+    transform:rotate(270deg);
 }
 .site-nav-mobile .navigation_all_mobile {
     display: block !important;
