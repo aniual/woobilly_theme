@@ -49,9 +49,15 @@
     pointer-events: none;
 }
 
+.halo-sidebar_menu .site-nav-mobile .icon-caret {
+    width: 15px;  /* 图标的宽度 */
+    height: 15px; /* 图标的高度 */
+    transform-origin: center center;  /* 设置旋转围绕中心 */
+    transition: transform 0.3s ease-in-out; /* 旋转时平滑过渡 */
+}
+
 .header__menu-item.is-open .icon-dropdown>.icon-caret{
     transform:rotate(90deg);
-    transform-origin: center;
 }
 
 .halo-sidebar_menu .menu-dropdown,
