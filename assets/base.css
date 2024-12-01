@@ -4070,11 +4070,11 @@ summary::-webkit-details-marker {
 
     .menu-lv-item .icon {
         left: 50%;
-    right: unset;
-    width: 15px;
-    height: 15px;
-    transform-origin: center; /* Ensure the rotation is around the center */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
+        right: unset;
+        width: 15px;
+        height: 15px;
+        transform-origin: center; /* Ensure the rotation is around the center */
+        transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
     }
 
     .menu-lv-item.has-megamenu{
