@@ -457,12 +457,10 @@
 }
 
 [data-navigation-mobile] .icon {
-    left: 50%;
-    right: unset;
     width: 15px;
     height: 15px;
-    transform-origin: center;  /* 确保旋转围绕图标中心 */
-    transition: transform 0.3s ease-in-out; /* 添加旋转平滑过渡 */
+    transform-origin: center; /* Ensure the rotation is around the center */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
 }
 
 [data-navigation-mobile] .custom-icon {
