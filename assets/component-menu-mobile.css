@@ -458,7 +458,8 @@
     right: unset;
     width: 15px;
     height: 15px;
-    transform: translate(-50%, -50%);
+    transform-origin: center;  /* 确保旋转围绕图标中心 */
+    transition: transform 0.3s ease-in-out; /* 添加旋转平滑过渡 */
 }
 
 [data-navigation-mobile] .custom-icon {
