@@ -47,7 +47,7 @@
     display: inline-block;
     position: absolute;
     transform: none;
-    pointer-events: none;
+    transform: translateY(-50%)
 }
 
 .halo-sidebar_menu .menu-dropdown,
