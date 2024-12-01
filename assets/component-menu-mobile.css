@@ -47,6 +47,7 @@
     display: inline-block;
     position: absolute;
     transform: none;
+    pointer-events: none;
 }
 
 .halo-sidebar_menu .menu-dropdown,
@@ -445,18 +446,17 @@
     top: 0;
     right: 0;
     width: 50px;
-    height: 50px; /* Define a fixed size for the icon container */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
+    text-align: center;
     pointer-events: none;
 }
 
 [data-navigation-mobile] .icon {
+    left: 50%;
+    right: unset;
     width: 15px;
     height: 15px;
-    transform-origin: center; /* Ensure the rotation is around the center */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
+    transform: translate(-50%, -50%);
 }
 
 .header__menu-item.is-open .icon-dropdown>.icon-caret{
