@@ -798,7 +798,7 @@
                     $parentLv1 = $target.parent().parent().parent().parent('.is-open'),
                     $parentLv2 = $target.parent().parent().parent('.is-open'),
                     $parentLv3 = $target.parent().parent('.is-open');
-
+                console.log('=======', $target);
                 $parentLv1.siblings().removeClass('is-hidden');
                 $parentLv1.removeClass('is-open').removeClass('d-none');
                 $parentLv2.siblings().removeClass('is-hidden');
