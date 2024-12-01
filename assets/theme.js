@@ -721,14 +721,14 @@
                     var $parent = $target.parent();
                     var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
                     var $submenu = $target.parent().find('ul.list-menu--disclosure-mobile-1');
-                    $submenu.addClass('is-open');
+                    $parent.addClass('is-open');
 
                     $submenu.removeClass('list-menu--disclosure-1 header__submenu list-menu list-menu--disclosure').addClass('mobile-menu-class');
 
                     // 控制显示或隐藏子菜单
                     if ($submenu.is(':visible')) {
                         // 隐藏子菜单并移除类
-                        $submenu.removeClass('is-open');
+                        $parent.removeClass('is-open');
                         $submenu.slideUp().removeClass('mobile-menu-class');
                     } else {
                         // 展开子菜单并添加类
