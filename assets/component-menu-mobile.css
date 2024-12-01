@@ -50,6 +50,10 @@
     pointer-events: none;
 }
 
+.header__menu-item.is-open .icon-dropdown .icon-caret{
+    transform:rotate(90deg);    
+}
+
 .halo-sidebar_menu .menu-dropdown,
 .halo-sidebar_menu .site-nav-list .site-nav-sub,
 .halo-sidebar_menu .list-menu--disclosure-1,
@@ -456,7 +460,8 @@
     right: unset;
     width: 15px;
     height: 15px;
-    transform: translate(-50%, -50%);
+    transform-origin: center; /* Ensure the rotation is around the center */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
 }
 
 [data-navigation-mobile] .custom-icon {
