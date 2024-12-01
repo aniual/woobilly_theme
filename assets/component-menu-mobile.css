@@ -41,23 +41,13 @@
     top: 0;
     right: 0;
     width: 50px;
-    height: 50px; /* Set a fixed height to avoid using 100% */
-    display: flex; /* Use flexbox to center the icon */
-    align-items: center; /* Vertically center the icon */
-    justify-content: center; /* Horizontally center the icon */
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
     position: absolute;
+    transform: none;
     pointer-events: none;
-}
-
-.halo-sidebar_menu .site-nav-mobile .icon-caret {
-    width: 15px;  /* 图标的宽度 */
-    height: 15px; /* 图标的高度 */
-    transform-origin: center center;  /* 设置旋转围绕中心 */
-    transition: transform 0.3s ease-in-out; /* 旋转时平滑过渡 */
-}
-
-.header__menu-item.is-open .icon-dropdown>.icon-caret{
-    transform:rotate(90deg);
 }
 
 .halo-sidebar_menu .menu-dropdown,
