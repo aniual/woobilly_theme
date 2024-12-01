@@ -722,7 +722,7 @@
                     // var $menuDislosure1 = $target.parent().find('ul.list-menu--disclosure-1');
                     var $submenu = $target.parent().find('ul.list-menu--disclosure-mobile-1');
 
-                    $submenu.removeClass('list-menu--disclosure-1 header__submenu list-menu list-menu--disclosure').addClass('mobile-menu-class').addClass('is-open');
+                    $submenu.removeClass('list-menu--disclosure-1 header__submenu list-menu list-menu--disclosure').addClass('mobile-menu-class');
 
                     // 控制显示或隐藏子菜单
                     if ($submenu.is(':visible')) {
