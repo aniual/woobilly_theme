@@ -50,6 +50,10 @@
     pointer-events: none;
 }
 
+.header__menu-item.is-open .icon-dropdown>.icon-caret{
+    transform:rotate(90deg);
+}
+
 .halo-sidebar_menu .menu-dropdown,
 .halo-sidebar_menu .site-nav-list .site-nav-sub,
 .halo-sidebar_menu .list-menu--disclosure-1,
