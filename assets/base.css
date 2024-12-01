@@ -4069,13 +4069,12 @@ summary::-webkit-details-marker {
     }
 
     .menu-lv-item .icon {
-        display: block;
-        position: absolute;
-        height: 10px;
-        width: 10px;
-        top: 50%;
-        right: 0px;
-        transform: translateY(-50%);
+        left: 50%;
+    right: unset;
+    width: 15px;
+    height: 15px;
+    transform-origin: center; /* Ensure the rotation is around the center */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
     }
 
     .menu-lv-item.has-megamenu{
