@@ -72,11 +72,7 @@
     -webkit-transform: translate3d(-101%, 0, 0);
     transform: translate3d(-101%, 0, 0);
 }
-.header__menu-item.is-open .icon-dropdown>.icon-caret{
-    transform:rotate(90deg);
-    transform-origin: center; /* 设置旋转中心为图标的中心 */
-    transition: transform 0.3s ease-in-out; /* 平滑旋转过渡 */
-}
+
 .site-nav-mobile .navigation_all_mobile {
     display: block !important;
 }
@@ -461,6 +457,11 @@
     height: 15px;
     transform-origin: center; /* Ensure the rotation is around the center */
     transition: transform 0.3s ease-in-out; /* Smooth transition for rotation */
+}
+
+.header__menu-item.is-open .icon-dropdown>.icon-caret{
+    transform:rotate(90deg);
+    transform-origin: center;
 }
 
 [data-navigation-mobile] .custom-icon {
