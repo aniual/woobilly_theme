@@ -556,6 +556,184 @@
         "border_width_card": 5,
         "border_color_card": "#f0f1f4"
       }
+    },
+    "featured_product_HN7tRg": {
+      "type": "featured-product",
+      "blocks": {
+        "title_qaaiKj": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 40,
+            "fontsize_text_mb": 24,
+            "color_title": "#232323",
+            "spacing_top": 0,
+            "spacing_bottom": 17
+          }
+        },
+        "meta_3pzgjH": {
+          "type": "meta",
+          "settings": {
+            "spacing_top": 0,
+            "spacing_bottom": 13,
+            "show_review": true,
+            "show_sold_in": true,
+            "sold_in_number": "3,5,6,7,8,10,12,15",
+            "sold_in_hours": "10,15,16,17,18,20,25,35",
+            "color_text_sold_in": "#b60b32"
+          }
+        },
+        "short_description_JrTnae": {
+          "type": "short_description",
+          "disabled": true,
+          "settings": {
+            "word_number": "17",
+            "fontsize_text": 16,
+            "color_text": "#232323",
+            "spacing_top": 0,
+            "spacing_bottom": 24
+          }
+        },
+        "price_Y6RJrb": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 30,
+            "spacing_top": 0,
+            "spacing_bottom": 24
+          }
+        },
+        "product_text_7ULmf8": {
+          "type": "product_text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_icon": "",
+            "text_description": "<strong>Shipping</strong> calculated at checkout.",
+            "fontsize_text": 16,
+            "content_spacing": 0,
+            "custom_block_align": "left",
+            "color_title": "#ffffff",
+            "background_color_block": "rgba(0,0,0,0)",
+            "background_gradient_color_block": "",
+            "spacing_top": 0,
+            "spacing_bottom": 26
+          }
+        },
+        "variant_picker_8NRmym": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "color_label": "#ffffff",
+            "enable_border_top": false,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "quantity_selector_ck4LPj": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "2",
+            "color_qty_label": "#ffffff",
+            "color_qty_input": "#f2f5ff",
+            "bg_color_qty_input": "#ffffff",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "buy_buttons_PcVLX8": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "fontsize_text": 14,
+            "checkbox_color": "#ffffff",
+            "checkbox_border_color": "#494a4d",
+            "spacing_top": 0,
+            "spacing_bottom": 15,
+            "color_qty_label": "#ffffff",
+            "color_qty_input": "#f2f5ff",
+            "bg_color_qty_input": "rgba(0,0,0,0)",
+            "wishlist_color": "#747474",
+            "wishlist_border_color": "#121212",
+            "wishlist_bg_color": "#121212",
+            "wishlist_color_hover": "#ffffff",
+            "wishlist_border_color_hover": "#3faeea",
+            "wishlist_bg_color_hover": "#3faeea",
+            "atc_animation": "horizontal-shaking",
+            "atc_color": "#ffffff",
+            "atc_border_color": "rgba(0,0,0,0)",
+            "atc_bg_color": "rgba(0,0,0,0)",
+            "atc_bg_color_gradient": "linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%)",
+            "atc_color_hover": "#ffffff",
+            "atc_border_color_hover": "rgba(0,0,0,0)",
+            "atc_bg_color_hover": "rgba(0,0,0,0)",
+            "atc_bg_color_gradient_hover": "linear-gradient(#000, #000) padding-box,        linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%) border-box",
+            "bin_color": "#ffffff",
+            "bin_border_color": "rgba(0,0,0,0)",
+            "bin_bg_color": "rgba(0,0,0,0)",
+            "bin_bg_color_gradient": "linear-gradient(#000, #000) padding-box,        linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%) border-box",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "rgba(0,0,0,0)",
+            "bin_bg_color_hover": "rgba(0,0,0,0)",
+            "bin_bg_color_hover_gradient": "linear-gradient(90deg, rgba(48, 188, 237, 1), rgba(127, 72, 176, 1) 50%, rgba(229, 26, 203, 1) 100%)"
+          }
+        }
+      },
+      "block_order": [
+        "title_qaaiKj",
+        "meta_3pzgjH",
+        "short_description_JrTnae",
+        "price_Y6RJrb",
+        "product_text_7ULmf8",
+        "variant_picker_8NRmym",
+        "quantity_selector_ck4LPj",
+        "buy_buttons_PcVLX8"
+      ],
+      "settings": {
+        "id_section": "",
+        "container": "container",
+        "padding_full_width": 0,
+        "show_sticky_info": false,
+        "mg_top_desktop": 60,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 40,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 30,
+        "mg_bottom_mobile": 30,
+        "bg_color_product": "#e9b1c3",
+        "title": "Best Seller",
+        "color_title": "#232323",
+        "fontsize_title": 60,
+        "fontsize_title_mb": 34,
+        "margin_bottom_title": 43,
+        "margin_bottom_title_mb": 20,
+        "des": "",
+        "color_des": "#ffffff",
+        "fontsize_des": 16,
+        "margin_bottom_des": 45,
+        "margin_bottom_des_mb": 30,
+        "title_align": "center",
+        "featured_product": "new-faja-extreme-tummy-tuck-waist-belt-for-women-shapewear",
+        "main_image_arrows_desktop": true,
+        "main_image_counter_mobile": false,
+        "main_image_position": "left",
+        "main_image_bg_color": "#121212",
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "2",
+        "thumbnail_to_show": 5,
+        "thumbnail_active_color": "#e11ecb",
+        "thumbnail_arrow_color_mb": "#ffffff",
+        "thumbnail_image_bg_color": "#121212",
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 100,
+        "media_fit": "unset",
+        "product_image_popup": "fancybox",
+        "video_layout": "thumbnail",
+        "show_badge": false,
+        "show_qty": true
+      }
     }
   },
   "order": [
@@ -564,6 +742,7 @@
     "product-grid",
     "product-recently-viewed",
     "lookbook_with_collection_cBhdrM",
-    "product_block_DVbNNU"
+    "product_block_DVbNNU",
+    "featured_product_HN7tRg"
   ]
 }
