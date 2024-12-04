@@ -154,6 +154,7 @@
     "portrait_height": "130",
     "show_image_loading": true,
     "show_vendor": false,
+    "show_price_percent": false,
     "display_item_size": false,
     "display_text_size": true,
     "style_text_color_varriant": "02",
