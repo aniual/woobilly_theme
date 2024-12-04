@@ -4,8 +4,6 @@
       class="menu-lv-1__action  header__menu-item list-menu__item link focus-inset menu_mobile_link link-effect"
       {% if link.url == blank %}
         role="link" aria-disabled="true"
-      {% else %}
-        href="javascript:void(0);"
       {% endif %}
       ><span class="text{%- if link.child_active %} header__active-menu-item{% endif %} p-relative">
         {{- link.title | escape -}}
