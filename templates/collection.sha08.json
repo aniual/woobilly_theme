@@ -903,7 +903,6 @@
         "image_bWF7xW",
         "image_rttczU"
       ],
-      "disabled": true,
       "settings": {
         "container": "1200",
         "padding_full_width": 0,
@@ -913,8 +912,8 @@
         "spotlight_block_swipe_on_mobile": "scroll",
         "column": "1",
         "column_mb": "1",
-        "enable_arrows": true,
-        "enable_arrows_mb": true,
+        "enable_arrows": false,
+        "enable_arrows_mb": false,
         "position_horizontal_slick_arrow": "0",
         "enable_dots": false,
         "enable_dots_mb": true,
