@@ -488,7 +488,7 @@
         "thumbnail_active_color": "#e11ecb",
         "thumbnail_arrow_color_mb": "#ffffff",
         "thumbnail_image_bg_color": "#121212",
-        "product_image_ratio": "portrait",
+        "product_image_ratio": "adapt",
         "portrait_aspect_ratio": 100,
         "media_fit": "unset",
         "product_image_popup": "none",
