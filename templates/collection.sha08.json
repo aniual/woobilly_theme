@@ -327,7 +327,7 @@
           "settings": {
             "fontsize_text": 40,
             "fontsize_text_mb": 24,
-            "color_title": "#FFFFFF",
+            "color_title": "#ffffff",
             "spacing_top": 0,
             "spacing_bottom": 17
           }
@@ -466,7 +466,7 @@
         "mg_bottom_mobile": 30,
         "bg_color_product": "#961642",
         "title": "Best Seller",
-        "color_title": "#FFFFFF",
+        "color_title": "#ffffff",
         "fontsize_title": 47,
         "fontsize_title_mb": 34,
         "margin_bottom_title": 43,
@@ -610,6 +610,7 @@
     },
     "product-recently-viewed": {
       "type": "product-recently-viewed",
+      "disabled": true,
       "settings": {
         "display_product_recently_viewed": true,
         "product_recently_viewed_container": "container",
