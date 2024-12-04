@@ -903,6 +903,7 @@
         "image_bWF7xW",
         "image_rttczU"
       ],
+      "disabled": true,
       "settings": {
         "container": "1200",
         "padding_full_width": 0,
