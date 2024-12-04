@@ -491,7 +491,7 @@
         "product_image_ratio": "adapt",
         "portrait_aspect_ratio": 100,
         "media_fit": "unset",
-        "product_image_popup": "none",
+        "product_image_popup": "fancybox",
         "video_layout": "thumbnail",
         "show_badge": false,
         "show_qty": true
