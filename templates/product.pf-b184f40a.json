@@ -359,6 +359,7 @@
         "custom_information_g3GPn6",
         "custom_information_DTQmMk"
       ],
+      "disabled": true,
       "settings": {
         "container": "1170",
         "padding_full_width": 0,
@@ -454,6 +455,7 @@
       "block_order": [
         "judge_me_reviews_review_widget_E3WQti"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -572,10 +574,10 @@
     }
   },
   "order": [
+    "pf-b184f40a",
     "main",
     "1725504771a123691f",
     "product-recommendations",
-    "product-recently-viewed",
-    "pf-b184f40a"
+    "product-recently-viewed"
   ]
 }
