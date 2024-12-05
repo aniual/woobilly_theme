@@ -9,6 +9,10 @@
  */
 {
   "sections": {
+    "pf-6e55b5dd": {
+      "type": "pf-6e55b5dd",
+      "settings": {}
+    },
     "main": {
       "type": "main-product-right-thumbs",
       "blocks": {
@@ -359,6 +363,7 @@
         "custom_information_g3GPn6",
         "custom_information_DTQmMk"
       ],
+      "disabled": true,
       "settings": {
         "container": "1170",
         "padding_full_width": 0,
@@ -454,6 +459,7 @@
       "block_order": [
         "judge_me_reviews_review_widget_E3WQti"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": false
       }
@@ -565,17 +571,13 @@
         "border_width_card": 5,
         "border_color_card": "#f0f1f4"
       }
-    },
-    "pf-6e55b5dd": {
-      "type": "pf-6e55b5dd",
-      "settings": {}
     }
   },
   "order": [
+    "pf-6e55b5dd",
     "main",
     "1725504771a123691f",
     "product-recommendations",
-    "product-recently-viewed",
-    "pf-6e55b5dd"
+    "product-recently-viewed"
   ]
 }
